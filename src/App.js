@@ -18,11 +18,11 @@ const App = () => {
 
   return (
     <div>
-      <h1>Calc</h1>
+      <h1>{total}</h1>
       {buttons.map((button, index) => {
         return(
           <div>
-              <Button value={button}/>
+              <Button value={button} clickHandler={clickHandler}/>
           </div>
         )
       })}
@@ -30,10 +30,10 @@ const App = () => {
   );
 }
 
-const Button = ({value}) => {
+const Button = ({value, clickHandler}) => {
   return(
     <div>
-      <button>{value}</button>
+      <button onClick={() => clickHandler(value)}>{value}</button>
     </div>
   )
 }
